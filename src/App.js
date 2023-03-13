@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
+import { EndlessScroll } from "./component/endlessscroll";
+import { WhetherApp } from "./component/wheather-app";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1 style={{ textAlign: "center" }}>JS PRACTICE QUESTIONS</h1>
+      <BrowserRouter>
+        <ul>
+          <li>
+            <Link to="/endlessscroll">EndlessScroll</Link>
+          </li>
+          <li>
+            <Link to="/whether-app">WhetherApp</Link>
+          </li>
+        </ul>
+        <Routes>
+          <Route path="/endlessscroll" element={<EndlessScroll />} />
+          <Route path="/whether-app" element={<WhetherApp />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
