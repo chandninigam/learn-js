@@ -56,7 +56,7 @@ export function EndlessScroll() {
     <div className="endless-Scroll">
       <div className="heading">List End Less Scroll</div>
       {data.map((each) => {
-        return <Tile detail={each} />;
+        return <Tile key={each.id} detail={each} />;
       })}
     </div>
   );
