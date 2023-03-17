@@ -1,7 +1,7 @@
 import "./App.css";
 import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
-import { EndlessScroll } from "./component/endlessscroll";
-import { WhetherApp } from "./component/wheather-app";
+import { EndlessScroll } from "./component/Endlessscroll";
+import { WhetherApp } from "./component/Wheather-app";
 
 function App() {
   return (
