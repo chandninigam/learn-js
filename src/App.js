@@ -2,6 +2,7 @@ import "./App.css";
 import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import { EndlessScroll } from "./component/Endlessscroll";
 import { WhetherApp } from "./component/Wheather-app";
+import { DropDown } from "./component/DropDown";
 
 function App() {
   return (
@@ -15,10 +16,14 @@ function App() {
           <li>
             <Link to="/whether-app">WhetherApp</Link>
           </li>
+          <li>
+            <Link to="/dropdown">DropDown</Link>
+          </li>
         </ul>
         <Routes>
           <Route path="/endlessscroll" element={<EndlessScroll />} />
           <Route path="/whether-app" element={<WhetherApp />} />
+          <Route path="/dropdown" element={<DropDown />} />
         </Routes>
       </BrowserRouter>
     </div>
