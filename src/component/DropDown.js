@@ -31,7 +31,7 @@ const DummyData = [
 ];
 
 export function DropDown() {
-  const [data, setData] = useState(DummyData);
+  const [data] = useState(DummyData);
   const [currCountry, setCurrCountry] = useState(DummyData[0].country);
 
   function FindCurrentCountryStates() {
