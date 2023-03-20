@@ -96,11 +96,10 @@ export function LoginPage() {
               <td>{each.email}</td>
               <td>{each.contact}</td>
               <button
-              // onClick={() => {
-              //   const eleIndex = data.indexOf(each);
-              //   const res = data.splice(eleIndex, 1);
-              //   setData(res);
-              // }}
+                onClick={() => {
+                  const res = data.filter((eachEle) => each !== eachEle);
+                  setData(res);
+                }}
               >
                 Delete
               </button>
