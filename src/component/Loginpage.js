@@ -21,7 +21,6 @@ export function LoginPage() {
     setEmail("");
     setContact(" ");
   }
-  console.log(data);
 
   return (
     <div
@@ -88,7 +87,6 @@ export function LoginPage() {
           <th>Contact</th>
         </tr>
         {data.map((each, index) => {
-          console.log("each", each, index);
           return (
             <tr key={index}>
               <td>{each.name}</td>
