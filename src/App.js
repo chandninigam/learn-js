@@ -12,20 +12,20 @@ function App() {
     <div className="App">
       <h1 style={{ textAlign: "center" }}>JS PRACTICE QUESTIONS</h1>
       <BrowserRouter>
-        <ul>
-          <li>
+        <ul className="ul-list">
+          <li className="list">
             <Link to="/endlessscroll">EndlessScroll</Link>
           </li>
-          <li>
+          <li className="list">
             <Link to="/whether-app">WhetherApp</Link>
           </li>
-          <li>
+          <li className="list">
             <Link to="/dropdown">DropDown</Link>
           </li>
-          <li>
+          <li className="list">
             <Link to="/loginpage">Login</Link>
           </li>
-          <li>
+          <li className="list">
             <Link to="/loginauth">Login Authorization</Link>
           </li>
         </ul>
