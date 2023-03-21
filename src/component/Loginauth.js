@@ -1,14 +1,37 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+function InvalidText(obj) {
+  if (obj.display === true) {
+    return (
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+        }}
+      >
+        <div style={{ color: "red", padding: "0.5rem", fontSize: "0.8rem" }}>
+          Invalid Username and Password
+        </div>
+        <h5>See console to get correct username and pass</h5>
+      </div>
+    );
+  }
+  return null;
+}
+
 export function LoginAuthorization() {
   const [name, setName] = useState("");
   const [pass, setPass] = useState("");
-  const [data, setData] = useState();
+  const [data, setData] = useState(null);
+  const [displayError, setDisplayError] = useState(false);
 
   const navigate = useNavigate();
 
   useEffect(() => {
+    console.log("Correct Username: kminchelle");
+    console.log("Correct Password: 0lelplR");
     const token = localStorage.getItem("token");
     if (token) {
       navigate("/dashboard");
@@ -28,7 +51,12 @@ export function LoginAuthorization() {
     })
       .then((res) => res.json())
       .then((result) => {
-        localStorage.setItem("token", result.token);
+        if (result.token !== undefined) {
+          localStorage.setItem("token", result.token);
+          setDisplayError(false);
+        } else {
+          setDisplayError(true);
+        }
         setData(result);
       });
   }
@@ -53,6 +81,7 @@ export function LoginAuthorization() {
           setPass(e.target.value);
         }}
       />
+      <InvalidText display={displayError} />
       <button onClick={onClickLoginBtn}>Login</button>
     </div>
   );
